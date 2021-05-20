@@ -1,0 +1,154 @@
+/*Import fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+/*Primary colors*/
+/*Neutral colors*/
+/*Fonts*/
+/*Remove default styles*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+figure {
+  margin: 0; }
+
+/*Set root html font-size*/
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #090b1a; }
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/*Card Component*/
+.card-landscape {
+  max-width: 32rem;
+  background: #1b1938;
+  display: flex;
+  flex-flow: column-reverse;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin: 10vh 0;
+  box-shadow: rgba(12, 12, 20, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transition: all 300ms ease; }
+  @media (min-width: 600px) {
+    .card-landscape {
+      max-width: 100rem;
+      flex-direction: row; } }
+  @media (min-width: 900px) {
+    .card-landscape {
+      transition: 500ms; }
+      .card-landscape:hover {
+        transition: 500ms;
+        transform: translateY(-1rem);
+        border: 1px solid #aa5cdb; } }
+  .card-landscape__content {
+    flex-direction: column;
+    text-align: center;
+    margin: 4rem 2rem; }
+    @media (min-width: 600px) {
+      .card-landscape__content {
+        text-align: left;
+        width: 50%;
+        margin: 6rem; } }
+    .card-landscape__content h2 {
+      font-family: "Inter", sans-serif;
+      font-size: 2.8rem;
+      color: white;
+      margin-bottom: 2rem; }
+      @media (min-width: 600px) {
+        .card-landscape__content h2 {
+          font-size: 3.5rem; } }
+      .card-landscape__content h2 .highlight {
+        color: #aa5cdb; }
+    .card-landscape__content p {
+      font-family: "Lexend Deca", sans-serif;
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 180%; }
+      @media (min-width: 600px) {
+        .card-landscape__content p {
+          width: 85%; } }
+    .card-landscape__content .content__stat {
+      margin-top: 3.5rem;
+      flex-direction: column; }
+      @media (min-width: 600px) {
+        .card-landscape__content .content__stat {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-right: unset; } }
+      @media (min-width: 900px) {
+        .card-landscape__content .content__stat {
+          margin-right: calc(100% / 7); } }
+      .card-landscape__content .content__stat .stat-details {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem; }
+        .card-landscape__content .content__stat .stat-details .number {
+          font-family: "Inter", sans-serif;
+          font-weight: 700;
+          font-size: 2rem;
+          color: white; }
+          @media (min-width: 600px) {
+            .card-landscape__content .content__stat .stat-details .number {
+              font-size: 2.4rem; } }
+        .card-landscape__content .content__stat .stat-details .label {
+          margin-top: 0.5rem;
+          font-family: "Lexend Deca", sans-serif;
+          font-size: 1.2rem;
+          color: rgba(255, 255, 255, 0.6);
+          text-transform: uppercase;
+          letter-spacing: 0.1rem; }
+  .card-landscape__media {
+    position: relative; }
+    .card-landscape__media figure {
+      margin: 0 auto; }
+      @media (min-width: 600px) {
+        .card-landscape__media figure {
+          height: 100%; } }
+      .card-landscape__media figure img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        filter: contrast(150%) brightness(50%);
+        vertical-align: top; }
+        @media (min-width: 600px) {
+          .card-landscape__media figure img {
+            width: 100%;
+            height: 100%; } }
+    .card-landscape__media::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+      background: #aa5cdb;
+      filter: contrast(150%) saturate(120%);
+      overflow: hidden; }
+
+/*footer credits*/
+.attribution {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem; }
+  .attribution a {
+    color: #aa5cdb; }
+    .attribution a:hover {
+      text-decoration: underline; }

@@ -1,0 +1,213 @@
+/*Import fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+/*Primary colors*/
+$primary-very-darkblue: hsl(233, 47%, 7%);
+$primary-desaturated-blue: hsl(244, 38%, 16%);
+$primary-soft-violet: hsl(277, 64%, 61%);
+
+/*Neutral colors*/
+$neutral-white-100: hsl(0, 0%, 100%);
+$neutral-white-75: hsla(0, 0%, 100%, 0.75);
+$neutral-white-60: hsla(0, 0%, 100%, 0.6);
+
+/*Fonts*/
+$primary-font: "Inter", sans-serif;
+$secondary-font: "Lexend Deca", sans-serif;
+
+/*Remove default styles*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+/*Set root html font-size*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $primary-very-darkblue;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Card Component*/
+
+.card-landscape {
+  max-width: 32rem;
+  background: $primary-desaturated-blue;
+  display: flex;
+  flex-flow: column-reverse;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin: 10vh 0;
+  box-shadow: rgba(12, 12, 20, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transition: all 300ms ease;
+
+  @media (min-width: 600px) {
+    max-width: 100rem;
+    flex-direction: row;
+  }
+
+  @media (min-width: 900px) {
+    transition: 500ms;
+    &:hover {
+      transition: 500ms;
+      transform: translateY(-1rem);
+      border: 1px solid $primary-soft-violet;
+    }
+  }
+
+  &__content {
+    flex-direction: column;
+    text-align: center;
+    margin: 4rem 2rem;
+
+    @media (min-width: 600px) {
+      text-align: left;
+      width: 50%;
+      margin: 6rem;
+    }
+
+    h2 {
+      font-family: $primary-font;
+      font-size: 2.8rem;
+      color: $neutral-white-100;
+      margin-bottom: 2rem;
+
+      @media (min-width: 600px) {
+        font-size: 3.5rem;
+      }
+
+      .highlight {
+        color: $primary-soft-violet;
+      }
+    }
+
+    p {
+      font-family: $secondary-font;
+      font-size: 1.5rem;
+      color: $neutral-white-75;
+      line-height: 180%;
+
+      @media (min-width: 600px) {
+        width: 85%;
+      }
+    }
+
+    .content__stat {
+      margin-top: 3.5rem;
+      flex-direction: column;
+
+      @media (min-width: 600px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-right: unset;
+      }
+
+      @media (min-width: 900px) {
+        margin-right: calc(100% / 7);
+      }
+
+      .stat-details {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+
+        .number {
+          font-family: $primary-font;
+          font-weight: 700;
+          font-size: 2rem;
+          color: $neutral-white-100;
+
+          @media (min-width: 600px) {
+            font-size: 2.4rem;
+          }
+        }
+
+        .label {
+          margin-top: 0.5rem;
+          font-family: $secondary-font;
+          font-size: 1.2rem;
+          color: $neutral-white-60;
+          text-transform: uppercase;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+
+    figure {
+      margin: 0 auto;
+
+      @media (min-width: 600px) {
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        filter: contrast(150%) brightness(50%);
+        vertical-align: top;
+
+        @media (min-width: 600px) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+      background: $primary-soft-violet;
+      filter: contrast(150%) saturate(120%);
+      overflow: hidden;
+    }
+  }
+}
+
+/*footer credits*/
+.attribution {
+  font-family: $secondary-font;
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem;
+
+  a {
+    color: $primary-soft-violet;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
